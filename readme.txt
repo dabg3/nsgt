@@ -29,16 +29,28 @@ Installation:
 
 In the console (terminal application) change to the folder containing this readme.txt file.
 
+Setup virtual environment:
+python -m venv venv
+source venv/bin/activate
+
+Install dependencies:
+pip install -r requirements.txt
+
 To build the package run the following command:
-python setup.py build
+python -m build
 
-To install the package (with administrator rights):
-sudo python setup.py install
+Before installing exit from the virtual environment:
+deactivate
 
+To install the package globally (with administrator rights):
+sudo pip install .
+
+It's encouraged to use virtual environments instead of installing packages globally
 
 Todo:
 -----
 
+- Fix numpy casting error (run tests to reproduce)
 - Quality measurement for coefficients of sliced transform
 - Unify nsgfwin sliced/non-sliced
 
