@@ -88,17 +88,17 @@ def nsgfwin(f, q, sr, Ls, sliced=True, min_win=4, Qvar=1, dowarn=True, dtype=np.
         M[lbas+2:2*(lbas+1)] = M[lbas:0:-1]
 #        M[-1] = M[1]
         M *= Qvar/4.
-        M = np.round(M).astype(int)
+        M = np.round(M)
         M *= 4        
     else:
-        M = np.zeros(fbas.shape, dtype=int)
+        M = np.zeros(fbas.shape, dtype=float)
         M[0] = np.round(2*fbas[1])
         for k in range(1,2*lbas+1):
             M[k] = np.round(fbas[k+1]-fbas[k-1])
         M[-1] = np.round(Ls-fbas[-2])
         
     np.clip(M, min_win, np.inf, out=M)
-
+    M = M.astype(int)
 #    print "M",list(M)
     
     if sliced: 

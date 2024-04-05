@@ -47,10 +47,10 @@ sudo pip install .
 
 It's encouraged to use virtual environments instead of installing packages globally
 
+
 Todo:
 -----
 
-- Fix numpy casting error (run tests to reproduce)
 - Quality measurement for coefficients of sliced transform
 - Unify nsgfwin sliced/non-sliced
 
